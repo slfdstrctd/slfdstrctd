@@ -1,0 +1,44 @@
+name: Build LaTeX document
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo 
+        uses: actions/checkout@v2
+
+      - name: Get from Dropbox
+        uses: gbrls/action-dropbox-download@v1.0.2
+        with:
+          dropbox-refresh-token: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+          source-path: ${{ secrets.DROPBOX_PATH }}
+          destination-path: "./"
+
+      - name: Push to Repository
+        run: |
+          git add .
+          git commit -m "Add LaTeX file" || echo "No changes to commit"
+          git push origin main || echo "No changes to push"
+
+      - name: Setup TeX
+        uses: xu-cheng/latex-action@v2
+        with:
+          working-directory: . 
+
+      - name: Build TeX
+        run: latexmk -pdf main.tex
+
+      - name: Push PDF to Repository
+        run: |
+          git add .
+          git commit -m "Add compiled PDF" || echo "No changes to commit"
+          git push origin main || echo "No changes to push"
+
+      - name: Upload PDF as Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: CV
+          path: ./CV.pdf
