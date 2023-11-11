@@ -17,4 +17,4 @@ A passionate Data Analyst from Saint Petersburg
 |[Smatched](https://github.com/konstantgr/smatched)|Stable Diffusion makeup transfer web app|![Python](https://img.shields.io/badge/python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white") ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)|
 |[CloudPrints](https://github.com/slfdstrctd/cloudprints_web)|Web 3D printing service|![Node](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Python](https://img.shields.io/badge/python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white")|
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=slfdstrctd&show_icons=true&locale=en&layout=compact" alt="slfdstrctd" /></p>
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=slfdstrctd&locale=en&layout=compact" alt="slfdstrctd" /></p>
