@@ -11,11 +11,19 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Get from Dropbox
-        uses: gbrls/action-dropbox-download@v1.0.2
+        uses: tlambert03/dropbox-download-action@v1
         with:
           dropbox-refresh-token: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+          dropbox-app-key: ${{ secrets.DROPBOX_APP_KEY }}
+          dropbox-app-secret: ${{ secrets.DROPBOX_APP_SECRET }}
           source-path: ${{ secrets.DROPBOX_PATH }}
-          destination-path: "./"
+          dest-path: "./"
+
+        # uses: gbrls/action-dropbox-download@v1.0.2
+        # with:
+        #   dropbox-refresh-token: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        #   source-path: ${{ secrets.DROPBOX_PATH }}
+        #   destination-path: "./"
 
       - name: Push to Repository
         run: |
